@@ -16,7 +16,7 @@ int num_contactos;
  * Esta función sirve para agregar un contacto nuevo en la agenda
  */
 void agregar_contacto(Agenda *agenda, Contacto c){
-
+    printf("Agregar contacto\n");
 }
 
 
