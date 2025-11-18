@@ -34,6 +34,6 @@ void ordenar_contactos_inv(Agenda *agenda);
 void mostrar_contacto(Contacto);
 void leer_contacto(Contacto *c);
 void cargar_contactos(char *filename);
-void guardar_contactos(char *filename);
+void guardar_contactos(char *filename, Agenda agenda);
 
 #endif // __AGENDA_H_
