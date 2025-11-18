@@ -5,6 +5,7 @@
  */
 void iniciar_agenda(Agenda *agenda){
     printf("Hola mundo\n");
+    printf("Ejemplo de push\n");
 }
 
 
