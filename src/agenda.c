@@ -2,6 +2,7 @@
 
 /**
  * Esta función se encarga de iniciar el número de contactos a cero
+ * @param agenda  la referencia a la agenda que se quiere iniciar
  */
 void iniciar_agenda(Agenda *agenda){
     
@@ -9,8 +10,6 @@ void iniciar_agenda(Agenda *agenda){
 
 
 
-// Varible que lleva la cuenta de cuantos contactos hay en la agenda
-int num_contactos;
 
 /**
  * Esta función sirve para agregar un contacto nuevo en la agenda
@@ -23,6 +22,10 @@ void agregar_contacto(Agenda *agenda, Contacto c){
 /**
  * Esta función sirve para buscar un contacto por nombre en la agenda y retorna la posición del contacto si exisite
  * En caso contrario retorna -1
+ * @param agenda
+ * @param nombre
+ * @return -1 cuando no encuentra un contacto en la agenda
+ *         otro valor si lo encontro
  */
 int buscar_contacto(Agenda *agenda, char *nombre){
 
@@ -62,7 +65,11 @@ void ordenar_contactos_inv(Agenda *a){
     Contacto temp;
     for(i = 0; i < a->num_contactos; i++){
         for(j=0; j < a->num_contactos-i-1; j++){
-            //Completar basandose en la función anterior
+            if(strcmp(a->contactos[j].nombre, a->contactos[j+1].nombre)>0){
+                temp = a->contactos[j];
+                a->contactos[j] = a->contactos[j+1];
+                a->contactos[j+1] = temp;
+            }
         }
     }
 }
